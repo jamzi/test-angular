@@ -113,7 +113,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-" ng-repeat="profile in $ctrl.profiles">
+                            <tr class="text-" ng-repeat="profile in $ctrl.profiles track by profile.id">
                                 <td><img ng-src="{{ 'https://images.businessoffashion.com/' + profile.thumbnail.file + '?crop=focalpoint&fit=crop&w=80&h=80' }}"></td>
                                 <td>{{ profile.profile_title }}</td>
                                 <td>{{ profile.profile_sub_title }}</td>
@@ -134,11 +134,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul class="pagination col-md-pull-5">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
+                        <li ng-repeat="pageNumber in $ctrl.paginationNumbers" ng-class="{active : pageNumber === $ctrl.pageNumber}"><a href="" ng-click="$ctrl.getProfiles(pageNumber)">{{pageNumber}}</a></li>
                     </ul>
                 </div>
             </div>

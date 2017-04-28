@@ -20,8 +20,8 @@ Project Setup (NPM, Bower, First run) - 0,5h
 Project structure setup, routing setup - 0,5h
 Factory setup for HTTP calls ($resource) - 0,25h
 Calling $resource from controller with query params for pagination - 0,5h
-Calculate last page number by parsing link response header - 
-Setup pagination number buttons under profile list -
+Calculate last page number by parsing link response header - 0,5h
+Setup pagination number buttons under profile list - 0,5h
 
 Solution
 --------
