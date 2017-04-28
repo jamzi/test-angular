@@ -12,6 +12,8 @@ Factory setup for HTTP calls ($resource) - 0,5h
 Calling factory from controller with query params for pagination - 0,5h
 Calculate last page number by parsing link response header - 1h
 Setup pagination number buttons under profile list - 0,5h
+Filter parameters as an searchQuery object - 0,5h
+Filter implementation (conditions) - 1h
 
 Spent: x hours
 
@@ -22,6 +24,8 @@ Factory setup for HTTP calls ($resource) - 0,25h
 Calling $resource from controller with query params for pagination - 0,5h
 Calculate last page number by parsing link response header - 0,5h
 Setup pagination number buttons under profile list - 0,5h
+Filter parameters as an searchQuery object - 0,5h
+Filter implementation (conditions) - 0,5h
 
 Solution
 --------
