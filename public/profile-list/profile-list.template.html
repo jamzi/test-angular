@@ -113,13 +113,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-">
-                                <td><img src="http://img.businessoffashion.com/50/50/magic/profiles/asset/182/184c41b5f921f6c4b3121deb6ea3bc8f8fc11bd9.jpeg"></td>
-                                <td>Gianvito Rossi</td>
-                                <td>Designer, Gianvito Rossi</td>
-                                <td>Italy</td>
-                                <td class="text-center"><i class="glyphicon glyphicon-ok text-color-green"></i></td>
-                                <td class="text-center"><i class="glyphicon glyphicon-remove text-color-red"></i></td>
+                            <tr class="text-" ng-repeat="profile in $ctrl.profiles">
+                                <td><img ng-src="{{ 'https://images.businessoffashion.com/' + profile.thumbnail.file + '?crop=focalpoint&fit=crop&w=80&h=80' }}"></td>
+                                <td>{{ profile.profile_title }}</td>
+                                <td>{{ profile.profile_sub_title }}</td>
+                                <td>{{ profile.country_name }}</td>
+                                <td class="text-center">
+                                    <i ng-if="profile.is_enabled" class="glyphicon glyphicon-ok text-color-green"></i>
+                                    <i ng-if="!profile.is_enabled" class="glyphicon glyphicon-remove text-color-red"></i>
+                                </td>
+                                <td class="text-center">
+                                    <i ng-if="profile.is_visible" class="glyphicon glyphicon-ok text-color-green"></i>
+                                    <i ng-if="!profile.is_visible" class="glyphicon glyphicon-remove text-color-red"></i>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
