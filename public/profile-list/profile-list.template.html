@@ -115,7 +115,7 @@
                         <tbody>
                             <tr class="text-" ng-repeat="profile in $ctrl.profiles track by profile.id" ng-click="$ctrl.goToProfile(profile.id)">
                                 <td><img ng-src="{{ 'https://images.businessoffashion.com/' + profile.thumbnail.file + '?crop=focalpoint&fit=crop&w=80&h=80' }}"></td>
-                                <td>{{ profile.profile_title }}</td>
+                                <td>{{ profile.first_name + ' ' + profile.last_name }}</td>
                                 <td>{{ profile.profile_sub_title }}</td>
                                 <td>{{ profile.country_name }}</td>
                                 <td class="text-center">

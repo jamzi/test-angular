@@ -1,1 +1,1 @@
-angular.module('profileEdit', []);
+angular.module('profileEdit', ['core.profiles']);
