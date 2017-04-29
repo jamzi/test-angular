@@ -2,8 +2,8 @@ angular.
   module('profileList').
   component('profileList', {
     templateUrl: 'profile-list/profile-list.template.html',
-    controller: ['Profiles',
-      function ProfileListController(Profiles) {
+    controller: ['Profiles', '$location',
+      function ProfileListController(Profiles, $location) {
         var self = this;
         self.paginationNumbers = [];
         self.searchQuery = {
@@ -74,6 +74,10 @@ angular.
           self.searchQuery._page = pageNumber;
           self.getProfiles();
         }
+
+        self.goToProfile = function goToProfile(profileId) {
+          $location.path('/profiles/' + profileId);
+        };
 
         self.getProfiles();
       }
