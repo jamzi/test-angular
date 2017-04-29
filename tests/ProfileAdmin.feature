@@ -35,3 +35,24 @@ WHEN I click on a profile row
 THEN I expect to see profile edit page
 AND I expect to see user profile title in the breadcrum
 
+WHEN I visit the homepage
+THEN I expect to see a table of profiles
+WHEN I click on a profile row
+THEN I expect to see profile edit page
+WHEN I click on thumbnail picture
+THEN I see a live preview of selected picture (bigger picture)
+
+WHEN I visit the homepage
+THEN I expect to see a table of profiles
+WHEN I click on a profile row
+THEN I expect to see profile edit page
+WHEN I change the name
+AND I navigate to home page without saving
+THEN I expect to see old data for profile
+
+WHEN I visit the homepage
+THEN I expect to see a table of profiles
+WHEN I click on a profile row
+THEN I expect to see profile edit page
+WHEN I click on Save button
+THEN I am redirected back to ProfileList page
