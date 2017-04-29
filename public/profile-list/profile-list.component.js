@@ -12,26 +12,24 @@ angular.
 
         self.getProfiles = function getProfiles() {
           self.profiles = Profiles.query(self.searchQuery, function (data, headers) {
-            self.setPaginationNumbers(headers().link);
+            self.setPaginationNumbers(headers('x-total-count'));
           });
         };
 
-        self.setPaginationNumbers = function setPaginationNumbers(linkHeader) {
-          var links = linkHeader.split("<").splice(1);
-
-          _.each(links, function (link) {
-            var items = link.split(";");
-
-            var page = items[1].match(/rel=["']?((?:.(?!["']?\s+(?:\S+)=|[>"']))+.)["']?/).slice(1);
-            if (page[0] === 'last') {
-              var page = items[0].match(/page=(\d+)/);
-              var lastPageNumber = parseInt(page[1]) + 1;
-              self.paginationNumbers = _.range(1, lastPageNumber);
+        self.setPaginationNumbers = function setPaginationNumbers(totalProfilesCount) {
+          self.paginationNumbers = [];
+          if (totalProfilesCount / 10 >= 1) {
+            for (var i = 1; i <= Math.ceil(totalProfilesCount / 10); i++) {
+              self.paginationNumbers.push(i);
             }
-          });
+          }
+          else {
+            self.paginationNumbers.push(1);
+          }
         };
 
         self.setFilter = function setFilter(parameter, value) {
+          self.searchQuery._page = 1;
           //is_enabled
           if (parameter === 'is_enabled' || parameter === 'is_disabled') {
             if (parameter === 'is_enabled' && value === true) {
