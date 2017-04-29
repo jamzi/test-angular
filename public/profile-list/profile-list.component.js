@@ -28,43 +28,39 @@ angular.
           }
         };
 
-        self.setFilter = function setFilter(parameter, value) {
+        self.setFilter = function setFilter() {
           self.searchQuery._page = 1;
+          
           //is_enabled
-          if (parameter === 'is_enabled' || parameter === 'is_disabled') {
-            if (parameter === 'is_enabled' && value === true) {
-              self.searchQuery.is_enabled = true;
-            }
-            else if (parameter === 'is_disabled' && value === true) {
-              self.searchQuery.is_enabled = false;
-            }
-            else {
-              delete self.searchQuery.is_enabled;
-            }
+          if (self.filter.isEnabled) {
+            self.searchQuery.is_enabled = true;
+          }
+          else if (self.filter.isDisabled) {
+            self.searchQuery.is_enabled = false;
+          }
+          else {
+            delete self.searchQuery.is_enabled;
           }
 
           //is_visible
-          if (parameter === 'is_visible' || parameter === 'is_hidden') {
-            if (parameter === 'is_visible' && value === true) {
-              self.searchQuery.is_visible = true;
-            }
-            else if (parameter === 'is_hidden' && value === true) {
-              self.searchQuery.is_visible = false;
-            }
-            else {
-              delete self.searchQuery.is_visible;
-            }
+          if (self.filter.isVisible) {
+            self.searchQuery.is_visible = true;
+          }
+          else if (self.filter.isHidden) {
+            self.searchQuery.is_visible = false;
+          }
+          else {
+            delete self.searchQuery.is_visible;
           }
 
           //search
-          if (parameter === 'search') {
-            if (parameter === 'search' && value != '') {
-              self.searchQuery.q = value;
-            }
-            else {
-              delete self.searchQuery.q;
-            }
+          if (self.filter.search != '') {
+            self.searchQuery.q = self.filter.search;
           }
+          else {
+            delete self.searchQuery.q;
+          }
+
           self.getProfiles();
         }
 

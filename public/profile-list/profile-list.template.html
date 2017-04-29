@@ -26,7 +26,7 @@
                             </div>
                             <form action="/profiles">
                                 <div class="input-group">
-                                    <input name="q" type="text" class="form-control" placeholder="Search by anything" aria-describedby="sizing-addon2" ng-model="$ctrl.search" ng-change="$ctrl.setFilter('search', $ctrl.search)">
+                                    <input name="q" type="text" class="form-control" placeholder="Search by anything" aria-describedby="sizing-addon2" ng-model="$ctrl.filter.search" ng-change="$ctrl.setFilter()">
                                 </div>
                             </form>
                             <div class="panel-heading ">
@@ -37,7 +37,7 @@
                                     <li class="list-group-item">
                                         <div class="checkbox">
                                             <label>
-                                                    <input type="checkbox" ng-model="$ctrl.isEnabled" ng-click="$ctrl.setFilter('is_enabled', $ctrl.isEnabled)">
+                                                    <input type="checkbox" ng-model="$ctrl.filter.isEnabled" ng-click="$ctrl.setFilter()">
                                                     Yes
                                                 </label>
                                         </div>
@@ -45,7 +45,7 @@
                                     <li class="list-group-item">
                                         <div class="checkbox">
                                             <label>
-                                                    <input type="checkbox" ng-model="$ctrl.isDisabled" ng-click="$ctrl.setFilter('is_disabled', $ctrl.isDisabled)">
+                                                    <input type="checkbox" ng-model="$ctrl.filter.isDisabled" ng-click="$ctrl.setFilter()">
                                                     No
                                                 </label>
                                         </div>
@@ -60,7 +60,7 @@
                                     <li class="list-group-item">
                                         <div class="checkbox">
                                             <label>
-                                                    <input type="checkbox" ng-model="$ctrl.isVisible" ng-click="$ctrl.setFilter('is_visible', $ctrl.isVisible)">
+                                                    <input type="checkbox" ng-model="$ctrl.filter.isVisible" ng-click="$ctrl.setFilter()">
                                                     Yes
                                                 </label>
                                         </div>
@@ -68,7 +68,7 @@
                                     <li class="list-group-item">
                                         <div class="checkbox">
                                             <label>
-                                                    <input type="checkbox" ng-model="$ctrl.isHidden" ng-click="$ctrl.setFilter('is_hidden', $ctrl.isHidden)">
+                                                    <input type="checkbox" ng-model="$ctrl.filter.isHidden" ng-click="$ctrl.setFilter()">
                                                     No
                                                 </label>
                                         </div>
